@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" version="28.2.5">
+  <diagram name="ATM - Use Case (Withdraw)" id="0">
+    <mxGraphModel dx="1034" dy="570" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1080" pageHeight="1920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sys" value="ATM – RÚT TIỀN" style="shape=rectangle;whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="240" width="720" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_insert" value="Đưa thẻ / Nhập PIN" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+          <mxGeometry x="80" y="32" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_auth" value="Xác thực PIN" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="sys" vertex="1">
+          <mxGeometry x="360" y="32" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_select" value="Chọn chức năng Rút tiền" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+          <mxGeometry x="70" y="100" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_enter_amount" value="Nhập số tiền" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+          <mxGeometry x="60" y="248" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_withdraw" value="Xử lý giao dịch rút tiền" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+          <mxGeometry x="390" y="140" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_check_bal" value="Kiểm tra số dư &amp; hạn mức" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="sys" vertex="1">
+          <mxGeometry x="420" y="280" width="240" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_dispense" value="Phát tiền mặt" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+          <mxGeometry x="180" y="188" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_print" value="In biên lai" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" parent="sys" vertex="1">
+          <mxGeometry x="310" y="224" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_eject" value="Trả thẻ / Kết thúc" style="ellipse;whiteSpace=wrap;html=1;" parent="sys" vertex="1">
+          <mxGeometry x="500" y="70" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="inc1" value="&lt;&lt;include&gt;&gt;" style="endArrow=block;dashed=1;endFill=0;" parent="sys" source="uc_insert" target="uc_auth" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc2" value="&lt;&lt;include&gt;&gt;" style="endArrow=block;dashed=1;endFill=0;" parent="sys" source="uc_withdraw" target="uc_check_bal" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc3" value="&lt;&lt;include&gt;&gt;" style="endArrow=block;dashed=1;endFill=0;" parent="sys" source="uc_withdraw" target="uc_dispense" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext1" value="&lt;&lt;extend&gt;&gt;" style="endArrow=open;dashed=1;endFill=0;" parent="sys" source="uc_print" target="uc_withdraw" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc4" value="&lt;&lt;include&gt;&gt;" style="endArrow=block;dashed=1;endFill=0;" parent="sys" source="uc_withdraw" target="uc_eject" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_customer" value="Khách hàng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="60" y="360" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" parent="1" source="actor_customer" target="uc_insert" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" parent="1" source="actor_customer" target="uc_select" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" parent="1" source="actor_customer" target="uc_enter_amount" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K1-r0519S8eMmkkFTspK-1" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="actor_customer" target="uc_withdraw">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="510" as="sourcePoint" />
+            <mxPoint x="550" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
