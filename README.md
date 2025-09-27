@@ -29,8 +29,7 @@ Print(): In biên lai (tùy chọn)
 EjectCard(): ATM trả thẻ, kết thúc giao dịch
 
 ## Sequence Diagram – ATM Rút tiền  
-
-```mermaid
+mermaid
 sequenceDiagram
     autonumber
     actor KhachHang as Khách hàng
